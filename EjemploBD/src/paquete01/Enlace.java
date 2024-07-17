@@ -68,6 +68,9 @@ public class Enlace {
             
             ResultSet rs = statement.executeQuery(data);
             while(rs.next()){
+                // Se ocupa un getString porque estamos ocupando una cadena, con
+                // la que se envia al objeto, y en el caso del getInt, es porque
+                // la poblacion es un entero.
                 Ciudad miCiudad = new Ciudad(rs.getString("nombre"),
                 rs.getInt("poblacion"));
                 lista.add(miCiudad);
